@@ -12,7 +12,7 @@
 - TypeScript | JavaScript,
 - React,
 - Next,
-- Redux,
+- Redux | Zustand,
 - Git,
 - Axios | RTK Query | React Query
 
