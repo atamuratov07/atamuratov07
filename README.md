@@ -6,8 +6,8 @@ I am interested in both frontend and backend engineering and open to software de
 
 * **Languages:** TypeScript, JavaScript, Python, C++
 * **Frontend:** React, Next.js, Redux, TailwindCSS, MapLibre GL JS
-* **Backend:** Node.js, Express, Fastify, NestJS, Django, Socket.IO
-* **Data and infrastructure:** PostgreSQL, Prisma, Payload CMS, Docker, S3-compatible storage, Git and GitHub
+* **Backend:** Node.js, Express, Fastify, NestJS, Django, Socket.IO, grammY, Telegram Bot API
+* **Data and infrastructure:** PostgreSQL, Prisma, Payload CMS, Docker, S3-compatible storage, Redis, Git and GitHub
 * **AI integrations:** Vercel AI SDK, OpenAI API
 
 ## Selected projects
