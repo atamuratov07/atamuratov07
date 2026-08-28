@@ -5,23 +5,26 @@ I am interested in both frontend and backend engineering and open to software de
 ## Technical experience
 
 * **Languages:** TypeScript, JavaScript, Python, C++
-* **Frontend:** React, Next.js, Redux, TailwindCSS, MapLibre GL JS
-* **Backend:** Node.js, Express, Fastify, NestJS, Django, Socket.IO, grammY, Telegram Bot API
-* **Testing:** Vitest
-* **Data and infrastructure:** PostgreSQL, Prisma, Payload CMS, Docker, S3-compatible storage, Redis, Git and GitHub
+* **Backend:** Node.js, Express, Fastify, NestJS, Django, Socket.IO, Zod, grammY, Telegram Bot API
+* **Frontend:** React, Next.js, Vite, Redux, TailwindCSS, MapLibre GL JS, i18next
+* **Testing:** Vitest, Supertest
+* **Data and infrastructure:** PostgreSQL, Prisma, Payload CMS, Docker, Nginx, S3-compatible storage, Redis, Git and GitHub
 * **AI integrations:** Vercel AI SDK, OpenAI API
 
 ## Selected projects
 
-### [MapTap](https://github.com/atamuratov07/maptap-game)
+### [GeoRally](https://github.com/atamuratov07/georally-game) · [Live](https://georally.world)
 
-An educational geography platform with interactive map gameplay and real-time multiplayer quiz sessions.
+Real-time educational geography platform: solo map-based quizzes plus multiplayer rooms with two distinct modes — a self-paced **Group** mode where the host also competes, and a teacher-paced **Classroom** mode where the host only monitors. Deployed in production behind Docker Compose, Nginx, and Let's Encrypt; available in English, Russian, and Uzbek.
 
-Built as a TypeScript monorepo with separate web, server, game-domain, communication-protocol, geographic-data, and map-asset packages. The application includes multilingual content, interactive MapLibre maps, real-time Socket.IO communication, scoring, timers, and answer-reveal flows.
+- **Tested:** Vitest + Supertest cover the room/game service and HTTP-level integration tests.
+- **Self-built geo data pipeline:** a dedicated package pulls and normalizes country data from the REST Countries API and Wikidata (SPARQL), then generates vector map tiles with Tippecanoe — no paid map-data provider at runtime.
 
-**Technologies:** TypeScript, React, Vite, Express, Socket.IO, MapLibre GL JS, i18next, Zod
+Built as a pnpm workspaces monorepo — web, server, game-domain, protocol, geo-data, and map-asset packages.
 
-### [Prompt X-Ray](https://github.com/atamuratov07/prompt-xray)
+**Technologies:** TypeScript, Node.js, Express, Socket.IO, Zod, Vitest, Supertest, Docker, Nginx, React, Vite, MapLibre GL JS, i18next, Google Analytics 4
+
+### [Prompt X-Ray](https://github.com/atamuratov07/prompt-xray) · [Live](https://prompt-xray.netlify.app)
 
 A multilingual application that evaluates prompts for privacy exposure, academic-integrity risks, and prompt quality.
 
@@ -29,7 +32,7 @@ Designed a modular evaluator system that produces structured scores, findings, r
 
 **Technologies:** Next.js, TypeScript, Vercel AI SDK, OpenAI API, next-intl, Zod
 
-### [Pushkin School 37](https://github.com/atamuratov07/pushkin-school-37)
+### [Pushkin School 37](https://github.com/atamuratov07/pushkin-school-37) · [Live](https://pushkin-school-37.vercel.app)
 
 A seven-page school website with a custom content-management and administration system.
 
