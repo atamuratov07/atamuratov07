@@ -1,59 +1,54 @@
-Full-stack web developer with more than two years of experience independently designing, implementing, and deploying web applications.
+# Damir Atamuratov
 
-I am interested in both frontend and backend engineering and open to software development roles, internships, open-source projects, and hackathons.
+Full-stack web developer from Tashkent. For more than two years I have been designing, building and deploying web services on my own, mostly in TypeScript and Python. My main project, GeoRally, is a real-time multiplayer game running in production.
 
-## Technical experience
+## Projects
 
-* **Languages:** TypeScript, JavaScript, Python, C++
-* **Backend:** Node.js, Express, Fastify, NestJS, Django, Socket.IO, Zod, grammY, Telegram Bot API
-* **Frontend:** React, Next.js, Vite, Redux, TailwindCSS, MapLibre GL JS, i18next
-* **Testing:** Vitest, Supertest
-* **Data and infrastructure:** PostgreSQL, Prisma, Payload CMS, Docker, Nginx, S3-compatible storage, Redis, Git and GitHub
-* **AI integrations:** Vercel AI SDK, OpenAI API
+### GeoRally · [georally.world](https://georally.world) · [code](https://github.com/atamuratov07/georally-game)
 
-## Selected projects
+A browser geography game with solo practice and live multiplayer rooms, including a classroom mode where the teacher controls the pace and sees every player's answer. Available in English, Russian and Uzbek.
 
-### [GeoRally](https://github.com/atamuratov07/georally-game) · [Live](https://georally.world)
+- Restructured how the server broadcasts game state. Each update is now serialized once per room, and a player receives a small personal part only when it changes. In a 30-player room, messages per answer fell from 32 to 3, and server traffic per game fell from 62 MB to 9 MB.
+- Load-tested full games with up to 930 connected clients, checking every answer and final result. With 15 rooms answering at the same moment, answer-to-reveal p95 latency fell from 259 ms to 77 ms.
+- Built an offline pipeline that generates the map tiles and country data from open sources, so the game uses no paid map provider. A full rebuild went from 108 s to 9.7 s with byte-identical output.
 
-Real-time educational geography platform: solo map-based quizzes plus multiplayer rooms with two distinct modes — a self-paced **Group** mode where the host also competes, and a teacher-paced **Classroom** mode where the host only monitors. Deployed in production behind Docker Compose, Nginx, and Let's Encrypt; available in English, Russian, and Uzbek.
+**Stack:** TypeScript, Node.js, Express, Socket.IO, Zod, React, MapLibre GL, Vitest, Docker Compose, nginx
 
-- **Tested:** Vitest + Supertest cover the room/game service and HTTP-level integration tests.
-- **Self-built geo data pipeline:** a dedicated package pulls and normalizes country data from the REST Countries API and Wikidata (SPARQL), then generates vector map tiles with Tippecanoe — no paid map-data provider at runtime.
+### Qiraa · [live](https://qiraa-lab2.onrender.com) · [code](https://github.com/atamuratov07/qiraa)
 
-Built as a pnpm workspaces monorepo — web, server, game-domain, protocol, geo-data, and map-asset packages.
+A web app for preparing for an Arabic language assessment, with timed reading and grammar quizzes, and progress tracking. Users keep private content and share common content.
 
-**Technologies:** TypeScript, Node.js, Express, Socket.IO, Zod, Vitest, Supertest, Docker, Nginx, React, Vite, MapLibre GL JS, i18next, Google Analytics 4
+- Wrote the access rules for private, shared and admin-managed content once, applied as SQL, with Postgres constraints that reject invalid ownership states.
+- Kept past results unchanged when content is edited by giving each attempt its own copy, and moved existing data to it with a three-step migration.
+- Implemented sign-in without an auth library: Argon2id password hashing, session tokens stored only as hashes, and no way to probe which usernames exist.
 
-### [Prompt X-Ray](https://github.com/atamuratov07/prompt-xray) · [Live](https://prompt-xray.netlify.app)
+**Stack:** Python, FastAPI, SQLAlchemy, Alembic, PostgreSQL, pytest, GitHub Actions, Docker
 
-A multilingual application that evaluates prompts for privacy exposure, academic-integrity risks, and prompt quality.
+### AI Trading Chart Analysis MVP · team project (private code)
 
-Designed a modular evaluator system that produces structured scores, findings, recommendations, and rewritten prompts using schema-validated AI output.
+A web app, API and Telegram bot that analyse a trading-chart screenshot and return a trade setup. I worked in a senior backend developer's codebase on tasks he assigned and presented my work at weekly reviews.
 
-**Technologies:** Next.js, TypeScript, Vercel AI SDK, OpenAI API, next-intl, Zod
+- Moved storage from Redis to PostgreSQL to give users an analysis history, and rewrote the rate limiter as a single atomic SQL statement.
+- Replaced shared API keys with per-user sign-in, with session tokens verified locally on every request instead of through a call to the auth provider.
+- Built the Telegram bot, which runs the same analysis pipeline on a chart photo sent in chat.
 
-### [Pushkin School 37](https://github.com/atamuratov07/pushkin-school-37) · [Live](https://pushkin-school-37.vercel.app)
+**Stack:** TypeScript, Fastify, PostgreSQL, Prisma, Clerk, grammY, Next.js, Docker Compose
 
-A seven-page school website with a custom content-management and administration system.
+## Algorithms
 
-Built the public website and CMS-backed functionality for managing school content, staff information, news, media, and contact data, with PostgreSQL persistence and external file storage.
+- National stage of Uzbekistan's informatics olympiad, 35th place.
+- Yandex Algorithm Training, season 10 (2026): 170th of 1,300+ participants, top-300 certificate.
 
-**Technologies:** Next.js, TypeScript, Payload CMS, PostgreSQL, Vercel Blob
+I solve problems in C++ and Python.
 
-## Collaborative experience
+## Skills
 
-### AI-powered trading analysis MVP
-
-Contributed to the frontend and backend of a private cryptocurrency trading-analysis MVP under the guidance of an experienced software developer.
-
-Implemented authentication, database-backed features, and API functionality within an existing architecture. Reviewed unfamiliar code, worked with Docker-based development and deployment infrastructure, and created a prototype Telegram bot for the service.
-
-**Technologies:** TypeScript, Fastify, Prisma, PostgreSQL, Docker, Telegram Bot API
-
-## Algorithms and problem solving
-
-I have a strong foundation in data structures and algorithms, with competitive-programming experience in C++ and Python. I qualified for the national stage of Uzbekistan's informatics olympiad.
+- **Languages:** TypeScript, Python, C++, SQL
+- **Backend:** Node.js, Express, Fastify, Socket.IO, FastAPI, SQLAlchemy, Prisma
+- **Data and infrastructure:** PostgreSQL, Redis, Docker, nginx, GitHub Actions
+- **Frontend:** React, Next.js, Tailwind CSS
+- **Spoken:** Russian (native), English (C1, IELTS 8.0), Uzbek (B2)
 
 ## Contact
 
-[Telegram](https://t.me/damir_atam)
+[Telegram](https://t.me/damir_atam) · [Email](mailto:atam.damir@gmail.com)
